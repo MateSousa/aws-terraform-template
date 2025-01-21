@@ -31,14 +31,15 @@ module "eks" {
   }
 
   addons = {
-    coredns = ""
-    vpc_cni = ""
+    coredns    = ""
+    vpc-cni    = ""
+    kube-proxy = ""
   }
 
   node_groups = {
     eks_nodes = {
       capacity_type  = "SPOT"
-      instance_types = ["t4g.medium"]
+      instance_types = ["t3.medium"]
       desired_size   = 2
       max_size       = 2
       min_size       = 2
